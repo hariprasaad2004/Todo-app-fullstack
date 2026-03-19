@@ -28,12 +28,18 @@ async function loadTodos() {
     const li = document.createElement("li");
 
     li.innerHTML = `
-      ${todo.task}
-      <button onclick="deleteTodo('${todo._id}')">Delete</button>
-    `;
+  ${todo.task} - ${todo.completed ? "Done" : "Pending"}
+  
+  <button onclick="toggleTodo('${todo._id}')">
+    ${todo.completed ? "Undo" : "Complete"}
+  </button>
+
+  <button onclick="deleteTodo('${todo._id}')">Delete</button>
+`;
 
     list.appendChild(li);
   });
+  
 }
 
 // DELETE TODO
@@ -44,6 +50,12 @@ async function deleteTodo(id) {
 
   loadTodos();
 }
+async function toggleTodo(id) {
+  await fetch(API + "/" + id, {
+    method: "PUT"
+  });
 
+  loadTodos();
+}
 // Load when page opens
 loadTodos();
