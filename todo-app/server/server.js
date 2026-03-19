@@ -8,12 +8,12 @@ app.use(cors());
 
 const mongoose = require("mongoose");
 
-// ✅ CONNECT ROUTES (ADD THIS)
+// CONNECT ROUTES (ADD THIS)
 const todoRoutes = require("./routes/todoRoutes");
 app.use("/api/todos", todoRoutes);
 
 // DB connection
-mongoose.connect("mongodb://127.0.0.1:27017/todo")
+mongoose.connect("mongodb://localhost:27017/todo")
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
