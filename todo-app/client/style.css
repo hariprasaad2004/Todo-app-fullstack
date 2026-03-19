@@ -1,5 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 body {
   font-family: Arial;
+  justify-content: center;
+  align-items: center;
+
   padding: 20px;
 }
 
@@ -10,8 +19,18 @@ input {
 button {
   padding: 5px 10px;
   margin-left: 5px;
+  background-color: rgb(175, 175, 210);
+  border-radius: 7px;
+  
 }
 
 li {
   margin-top: 10px;
 }
+
+input{
+  border-radius: 7px;
+}
+
+
+
