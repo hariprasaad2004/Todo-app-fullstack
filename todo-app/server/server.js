@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 
@@ -13,10 +15,11 @@ const todoRoutes = require("./routes/todoRoutes");
 app.use("/api/todos", todoRoutes);
 
 // DB connection
-mongoose.connect("mongodb://localhost:27017/todo")
-  .then(() => console.log("MongoDB connected"))
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Atlas connected"))
   .catch(err => console.log(err));
 
+  
 // test route
 app.get("/", (req, res) => {
   res.send("Server is running");
