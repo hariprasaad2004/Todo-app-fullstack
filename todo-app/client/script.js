@@ -1,4 +1,4 @@
-const API = "https://learning-node-and-express.onrender.com/api/todos";
+const API = "http://localhost:3000/api/todos";
 
 // ADD TODO
 async function addTodo() {
