@@ -18,7 +18,7 @@ exports.getTodos = async (req, res) => {
     const todos = await Todo.find();
     res.json(todos);
   } catch (error) {
-    console.log(error); // 🔥 see error in logs
+    console.log(error); // 
     res.status(500).json({ message: "Server error" });
   }
 };
